@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-path-basic
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /blue
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-blue-svc
+            port:
+              number: 80
+  - http:
+      paths:
+      - path: /green
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-green-svc
+            port:
+              number: 80
+

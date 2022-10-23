@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        #labels:
+        #app: nginx-blue
+  name: nginx-blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-blue
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-blue
+    spec:
+      containers:
+      - image: thekoguryo/nginx-hello:blue
+        name: nginx-hello
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        #labels:
+        #app: nginx-green
+  name: nginx-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-green
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-green
+    spec:
+      containers:
+      - image: thekoguryo/nginx-hello:green
+        name: nginx-hello
