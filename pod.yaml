@@ -5,7 +5,7 @@ metadata:
     app: nginx-blue
   name: nginx-blue
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx-blue
@@ -26,7 +26,7 @@ metadata:
     app: nginx-green
   name: nginx-green
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx-green
