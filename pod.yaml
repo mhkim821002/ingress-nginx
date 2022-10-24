@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-        #labels:
-        #app: nginx-blue
+  labels:
+    app: nginx-blue
   name: nginx-blue
 spec:
   replicas: 1
@@ -18,12 +18,14 @@ spec:
       containers:
       - image: thekoguryo/nginx-hello:blue
         name: nginx-hello
+        resources: {}
+status: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-        #labels:
-        #app: nginx-green
+  labels:
+    app: nginx-green
   name: nginx-green
 spec:
   replicas: 1
@@ -39,3 +41,5 @@ spec:
       containers:
       - image: thekoguryo/nginx-hello:green
         name: nginx-hello
+        resources: {}
+status: {}
