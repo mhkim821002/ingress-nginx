@@ -18,8 +18,6 @@ spec:
       containers:
       - image: thekoguryo/nginx-hello:blue
         name: nginx-hello
-        resources: {}
-status: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,5 +39,3 @@ spec:
       containers:
       - image: thekoguryo/nginx-hello:green
         name: nginx-hello
-        resources: {}
-status: {}
